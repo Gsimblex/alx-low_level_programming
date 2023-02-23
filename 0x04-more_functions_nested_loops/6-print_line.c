@@ -1,15 +1,23 @@
 #include "main.h"
 
 /**
- * _abs - computes the absolute value of an integer
- * @n: the int to check
- * Return: the absolute value of int
+ * print_line - draws a straight line in the terminal
+ * @n: number of times the character _ should be printed
  */
-int _abs(int n)
+void print_line(int n)
 {
-	if (n >= 0)
+	if (n <= 0)
 	{
-		return (n);
+		_putchar('\n');
+	} else
+	{
+		int i;
+
+		for (i = 1; i <= n; i++)
+		{
+			_putchar('_');
+		}
+		_putchar('\n');
 	}
-	return (-n);
+
 }

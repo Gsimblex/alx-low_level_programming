@@ -1,28 +1,25 @@
 #include "main.h"
 
 /**
- * jack_bauer - prints every minute of the day of Jack Bauer
- * starting from 00:00 to 23:59
+ * print_square - prints a square, followed by a new line;
+ * @size: size of the square
  */
-void jack_bauer(void)
+void print_square(int size)
 {
-	int i, j;
-
-	i = 0;
-
-	while (i < 24)
+	if (size <= 0)
 	{
-		j = 0;
-		while (j < 60)
+		_putchar('\n');
+	} else
+	{
+		int i, j;
+
+		for (i = 0; i < size; i++)
 		{
-			_putchar((i / 10) + '0');
-			_putchar((i % 10) + '0');
-			_putchar(':');
-			_putchar((j / 10) + '0');
-			_putchar((j % 10) + '0');
+			for (j = 0; j < size; j++)
+			{
+				_putchar('#');
+			}
 			_putchar('\n');
-			j++;
 		}
-		i++;
 	}
 }

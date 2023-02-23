@@ -1,37 +1,36 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * times_table - prints the 9 times table, starting with 0
+ * main - prints the numbers from 1 to 100, followed by a new line
+ * but for multiples of three prints Fizz instead of the number
+ * and for the multiples of five prints Buzz
+ * Return: Always 0 (Success)
  */
-void times_table(void)
+int main(void)
 {
-	int i, j, k;
+	int i;
 
-	for (i = 0; i < 10; i++)
+	for (i = 1; i <= 100; i++)
 	{
-		for (j = 0; j < 10; j++)
+		if (i % 3 == 0 && i % 5 != 0)
 		{
-			k = j * i;
-			if (j == 0)
-			{
-				_putchar(k + '0');
-			}
-
-			if (k < 10 && j != 0)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(k + '0');
-			} else if (k >= 10)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar((k / 10) + '0');
-				_putchar((k % 10) + '0');
-			}
+			printf(" Fizz");
+		} else if (i % 5 == 0 && i % 3 != 0)
+		{
+			printf(" Buzz");
+		} else if (i % 3 == 0 && i % 5 == 0)
+		{
+			printf(" FizzBuzz");
+		} else if (i == 1)
+		{
+			printf("%d", i);
+		} else
+		{
+			printf(" %d", i);
 		}
-		_putchar('\n');
 	}
-}
+	printf("\n");
 
+	return (0);
+}
